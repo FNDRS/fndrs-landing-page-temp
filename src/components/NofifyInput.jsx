@@ -22,7 +22,7 @@ const NotifyInput = () => {
         }),
         {
           loading: "Sending notification...",
-          success: "We will contact you soon.",
+          success: "Thank you! We will contact you soon.",
           error: "Something went wrong. Please try again",
         }
       );

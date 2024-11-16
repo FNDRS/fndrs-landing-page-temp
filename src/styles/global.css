@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Jost";
+  src: url("/src/assets/fonts/Jost/Jost-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 @layer components {
   .btn-outline-primary:before {
     content: "";
@@ -26,10 +34,19 @@
   }
 }
 
-@font-face {
-  font-family: "Jost";
-  src: url("/src/assets/fonts/Jost/Jost-VariableFont_wght.ttf")
-    format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
+@keyframes gradientMovement {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 400% 400%;
+  animation: gradientMovement 15s ease infinite;
 }
