@@ -35,20 +35,35 @@ const { title } = Astro.props;
     <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body class="bg-primary-black text-white">
-    <Header />
-    <main>
+    <Header class="fadeInUp" />
+    <main class="fadeInUp">
       <slot />
     </main>
   </body>
 </html>
 
 <style is:global>
-  input:focus-visible,
-  select:focus-visible {
-    outline: 0;
-  }
-
   html {
     scroll-behavior: smooth;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  body {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  header,
+  main {
+    animation: fadeInUp 1.5s ease-out forwards;
   }
 </style>
