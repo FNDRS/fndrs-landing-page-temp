@@ -1,0 +1,38 @@
+---
+import Icon from "./Icon.astro";
+
+const { text } = Astro.props;
+---
+
+<div class="text-center">
+  <a
+    href="/case-study"
+    class="btn-outline-primary inline-block relative overflow-hidden text-primary-black font-semibold px-6 py-3 text-center transition-all duration-300 ease-in-out min-w-[200px] bg-white border-black hover:bg-primary-black rounded-md"
+  >
+    <span class="hover:text-white">{text}</span>
+  </a>
+</div>
+
+<style global>
+  .btn-outline-primary:before {
+    content: "";
+    width: 120%;
+    height: 300%;
+    position: absolute;
+    left: -10%;
+    bottom: -300%;
+    border-radius: 90%;
+    background-color: #000;
+    transition: all 0.2s ease-in;
+    z-index: -1;
+  }
+
+  .btn-outline-primary:hover:before {
+    bottom: -100%;
+  }
+
+  .btn-outline-primary:hover {
+    color: white;
+    transform: translateY(3px);
+  }
+</style>

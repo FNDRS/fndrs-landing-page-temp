@@ -1,12 +1,24 @@
 ---
+import NofifyInput from "src/components/NofifyInput.astro";
 import Layout from "src/layouts/Layout.astro";
 ---
 
 <Layout title="FNDRS - Software Agency">
-  <div class="flex justify-center items-center h-[calc(100vh-80px)]">
-    <div class="text-center">
-      <h1 class="text-6xl font-bold">FNDRS</h1>
-      <h2 class="text-3xl">Solutions in Software Development and Technology</h2>
+  <div
+    class="flex items-center align-middle justify-center h-[calc(100vh-280px)] mx-auto w-[700px]"
+  >
+    <div class="text-center flex items-center flex-col">
+      <h1
+        class="text-[90px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-red-500"
+      >
+        Coming Soon
+      </h1>
+      <h3 class="text-2xl mb-10 text-gray-300">
+        We are a full-cycle agency offering UI/UX design, brand identity, and
+        mobile & web development.
+      </h3>
+      <NofifyInput />
+      <p class="text-lg mt-4 text-gray-400">*Get Notified when we launch</p>
     </div>
   </div>
 </Layout>
