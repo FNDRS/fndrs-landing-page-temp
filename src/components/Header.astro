@@ -1,0 +1,31 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<header class="flex justify-between items-center h-[80px] p-4">
+  <h1 class="font-bold text-3xl">FNDRS</h1>
+  <nav>
+    <ul class="flex space-x-4 font-medium text-md text-gray-400">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <span>/</span>
+      </li>
+      <li>
+        <a href="/about">About</a>
+      </li>
+      <li>
+        <span>/</span>
+      </li>
+      <li>
+        <a href="/contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  <button
+    class="bg-white px-4 py-2 rounded-md text-primary-black font-bold flex flex-row"
+    >Get Notified
+    <Icon name="rightarrow" />
+  </button>
+</header>
