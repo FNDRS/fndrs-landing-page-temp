@@ -1,3 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-outline-primary:before {
+    content: "";
+    width: 120%;
+    height: 300%;
+    position: absolute;
+    left: -10%;
+    bottom: -300%;
+    border-radius: 90%;
+    background-color: #000;
+    transition: all 0.2s ease-in;
+    z-index: -1;
+  }
+
+  .btn-outline-primary:hover:before {
+    bottom: -100%;
+  }
+
+  .btn-outline-primary:hover {
+    color: white;
+    transform: translateY(3px);
+  }
+}
+
 @font-face {
   font-family: "Jost";
   src: url("/src/assets/fonts/Jost/Jost-VariableFont_wght.ttf")
@@ -5,13 +33,3 @@
   font-weight: 100 900;
   font-style: normal;
 }
-/* 
-@font-face {
-  font-family: "Jost";
-  src:
-    url("/src/assets/fonts/Jost/Jost-Bold.woff2") format("woff2"),
-    url("/src/assets/fonts/Jost/Jost-Bold.woff") format("woff");
-  font-weight: 700; 
-  font-style: normal;
-} 
-*/

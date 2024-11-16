@@ -1,5 +1,5 @@
 ---
-import NofifyInput from "src/components/NofifyInput.astro";
+import NofifyInput from "src/components/NofifyInput.jsx";
 import Layout from "src/layouts/Layout.astro";
 ---
 
@@ -17,7 +17,7 @@ import Layout from "src/layouts/Layout.astro";
         We are a full-cycle agency offering UI/UX design, brand identity, and
         mobile & web development.
       </h3>
-      <NofifyInput />
+      <NofifyInput client:load />
       <p class="text-lg mt-4 text-gray-400">*Get Notified when we launch</p>
     </div>
   </div>

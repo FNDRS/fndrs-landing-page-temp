@@ -14,27 +14,3 @@ const { text }: ButtonProps = Astro.props as ButtonProps;
     <span class="hover:text-white">{text}</span>
   </div>
 </button>
-
-<style is:global>
-  .btn-outline-primary:before {
-    content: "";
-    width: 120%;
-    height: 300%;
-    position: absolute;
-    left: -10%;
-    bottom: -300%;
-    border-radius: 90%;
-    background-color: #000;
-    transition: all 0.2s ease-in;
-    z-index: -1;
-  }
-
-  .btn-outline-primary:hover:before {
-    bottom: -100%;
-  }
-
-  .btn-outline-primary:hover {
-    color: white;
-    transform: translateY(3px);
-  }
-</style>
