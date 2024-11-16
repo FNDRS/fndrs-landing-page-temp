@@ -1,18 +1,63 @@
 ---
 import Button from "./Button.astro";
+
+export const prerender = false;
+
+let successMessage = "";
+let errorMessage = "";
+
+const handleSubmit = async (e: Event) => {
+  e.preventDefault();
+  successMessage = "";
+  errorMessage = "";
+
+  try {
+    const formData = await Astro.request.formData();
+    const email = formData.get("email");
+    const response = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      successMessage = "You've been added to the waitlist!";
+    } else {
+      errorMessage = data.message || "Something went wrong.";
+    }
+  } catch (err) {
+    console.error(err);
+    errorMessage = "Error connecting to the server.";
+  }
+};
 ---
 
-<div
-  class="bg-[#292929] gap-2 rounded-md mt-4 flex justify-between items-center pl-8 text-left w-[80%]"
+<form
+  method="POST"
+  action="/api/subscribe.json"
+  class="flex flex-col items-center w-full"
 >
-  <div class="grow">
-    <input
-      class="text-white text-2xl placeholder:text-2xl text-left w-full grow bg-[#292929] border-none outline-none ring-0"
-      value=""
-      placeholder="Enter your email address"
-    />
+  <div
+    class="bg-[#292929] gap-2 rounded-md mt-4 flex justify-between items-center pl-8 text-left w-[80%]"
+  >
+    <div class="grow">
+      <input
+        class="text-white text-2xl placeholder:text-2xl text-left w-full grow bg-[#292929] border-none outline-none ring-0"
+        name="email"
+        type="email"
+        placeholder="Enter your email address"
+        required
+      />
+    </div>
+    <div class="m-1">
+      <Button text="Notify Me" handleSubmit={handleSubmit} />
+    </div>
   </div>
-  <div class="m-1">
-    <Button text="Notify Me" />
-  </div>
-</div>
+
+  {successMessage && <p class="text-green-500 mt-2">{successMessage}</p>}
+  {errorMessage && <p class="text-red-500 mt-2">{errorMessage}</p>}
+</form>

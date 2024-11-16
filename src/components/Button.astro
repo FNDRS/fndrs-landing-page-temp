@@ -1,17 +1,19 @@
 ---
-import Icon from "./Icon.astro";
+interface ButtonProps {
+  text: string;
+  handleSubmit?: (event: Event) => void;
+}
 
-const { text } = Astro.props;
+const { text }: ButtonProps = Astro.props as ButtonProps;
 ---
 
-<div class="text-center">
-  <a
-    href="/case-study"
+<button class="text-center">
+  <div
     class="btn-outline-primary inline-block relative overflow-hidden text-primary-black font-semibold px-6 py-3 text-center transition-all duration-300 ease-in-out min-w-[200px] bg-white border-black hover:bg-primary-black rounded-md"
   >
     <span class="hover:text-white">{text}</span>
-  </a>
-</div>
+  </div>
+</button>
 
 <style is:global>
   .btn-outline-primary:before {
