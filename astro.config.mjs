@@ -8,6 +8,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
+	site: process.env.URL || 'http://localhost:4321',
 	integrations: [tailwind(), react()],
 	output: 'server',
 	adapter: node({
