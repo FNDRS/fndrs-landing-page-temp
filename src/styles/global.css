@@ -10,7 +10,24 @@
   font-style: normal;
 }
 
-@layer components {
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Evitar scroll innecesario */
+}
+
+body {
+  animation: fadeInUp 1s ease-out forwards;
+  background-color: #000;
+  font-family: "Jost", sans-serif;
+}
+
+header,
+main {
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+@layer utilities {
   .btn-outline-primary:before {
     content: "";
     width: 120%;
@@ -32,6 +49,22 @@
     color: white;
     transform: translateY(3px);
   }
+
+  .animate-gradient-x {
+    background-size: 400% 400%;
+    animation: gradientMovement 15s ease infinite;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes gradientMovement {
@@ -44,9 +77,4 @@
   100% {
     background-position: 0% 50%;
   }
-}
-
-.animate-gradient-x {
-  background-size: 400% 400%;
-  animation: gradientMovement 15s ease infinite;
 }
