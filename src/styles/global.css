@@ -14,7 +14,7 @@ html,
 body {
   height: 100%;
   margin: 0;
-  overflow: hidden; /* Evitar scroll innecesario */
+  overflow: hidden;
 }
 
 body {
@@ -28,6 +28,20 @@ main {
   animation: fadeInUp 1.5s ease-out forwards;
 }
 @layer utilities {
+  .bg-gradient-primary {
+    background-color: #000;
+    background-image: radial-gradient(
+        80% 55% at 100% 0%,
+        rgba(88, 42, 255, 0.18) 0%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      radial-gradient(
+        70% 50% at 0% 100%,
+        rgba(12, 64, 233, 0.2) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+  }
+
   .btn-outline-primary:before {
     content: "";
     width: 120%;
