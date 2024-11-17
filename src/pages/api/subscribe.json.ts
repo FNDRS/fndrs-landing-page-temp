@@ -1,9 +1,11 @@
+import * as process from "node:process";
+
 export const prerender = false;
 
 import type { APIRoute } from "astro";
 import { Resend } from "resend";
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
+const resend = new Resend(process.env['RESEND_API_KEY']);
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData();
@@ -16,10 +18,14 @@ export const POST: APIRoute = async ({ request }) => {
     });
   }
 
+  if (!process.env['RESEND_GENERAL_AUDIENCE']) {
+    throw new Error("RESEND_GENERAL_AUDIENCE is not set.");
+  }
+
   try {
     const sendResend = await resend.contacts.create({
       email,
-      audienceId: import.meta.env.RESEND_GENERAL_AUDIENCE,
+      audienceId: process.env['RESEND_GENERAL_AUDIENCE'].toString(),
     });
 
     if (sendResend.data) {
