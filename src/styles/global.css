@@ -4,8 +4,7 @@
 
 @font-face {
   font-family: "Jost";
-  src: url("/src/assets/fonts/Jost/Jost-VariableFont_wght.ttf")
-    format("truetype");
+  src: url("/src/assets/fonts/Jost/Jost-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
 }
@@ -30,16 +29,8 @@ main {
 @layer utilities {
   .bg-gradient-primary {
     background-color: #000;
-    background-image: radial-gradient(
-        80% 55% at 100% 0%,
-        rgba(88, 42, 255, 0.18) 0%,
-        rgba(0, 0, 0, 0) 100%
-      ),
-      radial-gradient(
-        70% 50% at 0% 100%,
-        rgba(12, 64, 233, 0.2) 0%,
-        rgba(0, 0, 0, 0) 100%
-      );
+    background-image: radial-gradient(80% 55% at 100% 0%, rgba(88, 42, 255, 0.18) 0%, rgba(0, 0, 0, 0) 100%),
+      radial-gradient(70% 50% at 0% 100%, rgba(12, 64, 233, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
   }
 
   .btn-outline-primary:before {

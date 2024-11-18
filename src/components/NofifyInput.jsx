@@ -1,44 +1,44 @@
-import { useState } from "react";
-import axios from "axios";
-import { Toaster, toast } from "react-hot-toast";
+import { useState } from "react"
+import axios from "axios"
+import { Toaster, toast } from "react-hot-toast"
 
 const NotifyInput = () => {
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState("")
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+    e.preventDefault()
+    setLoading(true)
 
-    const formData = new FormData();
-    formData.append("email", email);
+    const formData = new FormData()
+    formData.append("email", email)
 
     try {
       const response = await toast.promise(
         axios.post("/api/subscribe.json", formData, {
           headers: {
-            "Content-Type": "multipart/form-data",
-          },
+            "Content-Type": "multipart/form-data"
+          }
         }),
         {
           loading: "Sending notification...",
           success: "Thank you! We will contact you soon.",
-          error: "Something went wrong. Please try again",
+          error: "Something went wrong. Please try again"
         }
-      );
+      )
 
       if (response.status === 200) {
-        setEmail("");
+        setEmail("")
       } else {
-        toast.dismiss();
-        toast.error(response.data.message || "Something went wrong.");
+        toast.dismiss()
+        toast.error(response.data.message || "Something went wrong.")
       }
     } catch (err) {
-      console.error(err);
+      console.error(err)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col items-center w-full">
@@ -56,16 +56,14 @@ const NotifyInput = () => {
         <div className="m-1">
           <button className="text-center" type="submit" disabled={loading}>
             <div className="btn-outline-primary inline-block relative overflow-hidden text-primary-black font-semibold px-6 py-3 text-center transition-all duration-300 ease-in-out min-w-[200px] bg-white border-black hover:bg-primary-black rounded-md">
-              <span className="hover:text-white">
-                {loading ? "Sending..." : "Notify Me"}
-              </span>
+              <span className="hover:text-white">{loading ? "Sending..." : "Notify Me"}</span>
             </div>
           </button>
         </div>
       </div>
       <Toaster position="top-center" />
     </form>
-  );
-};
+  )
+}
 
-export default NotifyInput;
+export default NotifyInput

@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
   ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
@@ -31,7 +30,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2.1.5
         with:
-          node-version: '22'
+          node-version: "22"
 
       - name: Install Dependencies
         run: npm ci
@@ -63,7 +62,6 @@ jobs:
       - name: Download task definition
         run: |
           aws ecs describe-task-definition --task-definition fndrs-landing-page --query taskDefinition > task-definition.json
-
 
       - name: Fill in new image ID in task definition
         id: task-def

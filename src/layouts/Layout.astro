@@ -1,44 +1,53 @@
 ---
 import Header from "src/components/Header.astro";
-import {BASE_DOMAIN} from "src/utils";
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
-    title: string;
+  title: string;
 }
 
-const {title} = Astro.props;
+const { title } = Astro.props;
 const BASE_URL = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8"/>
+  <head>
+    <meta charset="utf-8" />
     <title>{title}</title>
-    <meta
-            name="description"
-            content="Official landing page of FNDRS: solutions in software development and technology."
-    />
-    <meta name="viewport" content="width=device-width"/>
 
+    <!-- Primary Meta Tags -->
+    <title>FNDRS – Software Agency</title>
+    <meta name="title" content="FNDRS – Software Agency" />
     <meta
-            property="twitter:description"
-            content="Official landing page of FNDRS: solutions in software development and technology."
+      name="description"
+      content="Official landing page of FNDRS: solutions in software development and technology."
     />
 
-    <meta property="og:site_name" content={BASE_DOMAIN}/>
-    <meta property="og:title" content={title}/>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://thefndrs.com" />
+    <meta property="og:title" content="FNDRS – Software Agency" />
     <meta
-            property="og:description"
-            content="Official landing page of FNDRS: solutions in software development and technology."
+      property="og:description"
+      content="Official landing page of FNDRS: solutions in software development and technology."
     />
-    <meta property="og:url" content={BASE_URL}/>
-</head>
-<body class="bg-primary-black text-white bg-gradient-primary">
-<Header class="fadeInUp"/>
-<main class="fadeInUp">
-    <slot/>
-</main>
-</body>
+    <meta property="og:image" content=`${BASE_URL}/og.png` />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://thefndrs.com/" />
+    <meta property="twitter:title" content="FNDRS – Software Agency" />
+    <meta
+      property="twitter:description"
+      content="Official landing page of FNDRS: solutions in software development and technology."
+    />
+    <meta property="twitter:image" content=`${BASE_URL}/og.png` />
+  </head>
+  <body class="bg-primary-black text-white bg-gradient-primary">
+    <Header class="fadeInUp" />
+    <main class="fadeInUp">
+      <slot />
+    </main>
+  </body>
 </html>

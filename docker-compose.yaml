@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   fndrs-landing-page-app:
     build:
@@ -6,4 +6,4 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4321:4321"
-    command: [ "node", "./dist/server/entry.mjs" ]
+    command: ["node", "./dist/server/entry.mjs"]
