@@ -3,9 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "astro/*": [
-        "./src/astro/*"
-      ]
+      "astro/*": ["./src/astro/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
