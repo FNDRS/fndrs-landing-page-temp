@@ -1,25 +1,21 @@
 ---
-import NofifyInput from "src/components/NofifyInput.jsx";
-import Layout from "src/layouts/Layout.astro";
+import NotifyInput from "src/components/NotifyInput.jsx"
+import Layout from "src/layouts/Layout.astro"
 ---
 
 <Layout title="FNDRS - Software Agency">
   <div
-    class="flex justify-center align-middle mx-auto items-center w-[770px] h-[calc(100vh-80px)]"
-  >
+    class="flex justify-center align-middle lg:mx-auto items-center lg:w-[770px] w-fit md:h-[calc(100vh-600px)] lg:h-[calc(100vh-180px)] h-[calc(100vh-150px)]">
     <div class="text-center flex items-center flex-col">
       <h1
-        class="text-[90px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 via-orange-500 via-yellow-500 via-lime-500 to-green-500 animate-gradient-x"
-      >
+        class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 via-orange-500 via-yellow-500 via-lime-500 to-green-500 animate-gradient-x md:mb-0 mb-10 lg:text-[90px] text-[120px] xs:text-8xl xs:leading-normal">
         Coming Soon
       </h1>
-      <h3 class="text-2xl mb-10">
-        We are currently working on something <span
-          class="font-bold underline text-purple-300">amazing</span
-        >. Stay tuned and subscribe to our newsletter to get notified when we
-        launch.
+      <h3 class="text-5xl leading-tight mb-10 px-6 lg:text-2xl xs:text-3xl">
+        We are currently working on something <span class="font-bold underlie text-re-300">amazing</span>. Subscribe to our
+        newsletter to get notified when we launch.
       </h3>
-      <NofifyInput client:load />
+      <NotifyInput client:load />
     </div>
   </div>
 </Layout>

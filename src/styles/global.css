@@ -9,11 +9,18 @@
   font-style: normal;
 }
 
-html,
-body {
+body,
+html {
   height: 100%;
+  width: 100%;
+  overflow: auto;
+
   margin: 0;
-  overflow: hidden;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 body {
@@ -29,8 +36,8 @@ main {
 @layer utilities {
   .bg-gradient-primary {
     background-color: #000;
-    background-image: radial-gradient(80% 55% at 100% 0%, rgba(88, 42, 255, 0.18) 0%, rgba(0, 0, 0, 0) 100%),
-      radial-gradient(70% 50% at 0% 100%, rgba(12, 64, 233, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+    background-image: radial-gradient(80% 55% at 100% 0%, rgba(53, 120, 201, 0.367) 0%, #13131300 100%),
+      radial-gradient(70% 50% at 0% 100%, rgba(126, 12, 233, 0.409) 0%, #13131300 100%);
   }
 
   .btn-outline-primary:before {

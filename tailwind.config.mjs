@@ -31,7 +31,7 @@ export default {
         }
       }
 
-      addUtilities(newUtilities)
+      addUtilities(newUtilities, ["responsive", "hover"])
     }
   ]
 }
