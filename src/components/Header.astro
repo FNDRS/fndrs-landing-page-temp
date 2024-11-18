@@ -1,16 +1,16 @@
 ---
-import Image from "astro/components/Image.astro";
+import Image from "astro/components/Image.astro"
+
+const logo = {
+  src: "/fndrs-logo.webp",
+  alt: "FNDRS logo"
+}
 ---
 
-<header class="flex justify-between items-center w-full h-[80px] py-4 px-8">
-  <!-- <h1 class="font-bold text-3xl">FNDRS</h1>  -->
-  <Image
-    src="/fndrs-logo.webp"
-    alt="FNDRS logo"
-    height="150"
-    width="150"
-    loading="eager"
-  />
+<header class="w-full py-4 lg:px-8">
+  <div class="w-full py-10">
+    <Image src={logo.src} alt={logo.alt} class="h-10 w-auto mx-auto" loading="eager" format="webp" width={618} height={47} />
+  </div>
 
   <!--  <nav>
     <ul class="flex space-x-4 font-medium text-md text-gray-400">

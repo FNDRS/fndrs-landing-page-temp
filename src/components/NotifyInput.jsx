@@ -42,10 +42,10 @@ const NotifyInput = () => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col items-center w-full">
-      <div className="bg-[#292929] gap-2 rounded-md mt-4 flex justify-between items-center pl-8 text-left w-[80%]">
+      <div className="bg-[#292929] gap-2 rounded-md mt-4 flex justify-between items-center md:pl-8 text-left w-[80%]">
         <div className="grow">
           <input
-            className="text-white text-2xl placeholder:text-2xl text-left w-full grow bg-[#292929] border-none outline-none ring-0"
+            className="text-white md:text-3xl xs:text-xl md:placeholder:text-3xl xs:placeholder:text-xl text-left w-full grow bg-[#292929] border-none outline-none ring-0 m-4"
             name="email"
             type="email"
             placeholder="Enter your email address"
@@ -53,10 +53,10 @@ const NotifyInput = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="m-1">
-          <button className="text-center" type="submit" disabled={loading}>
-            <div className="btn-outline-primary inline-block relative overflow-hidden text-primary-black font-semibold px-6 py-3 text-center transition-all duration-300 ease-in-out min-w-[200px] bg-white border-black hover:bg-primary-black rounded-md">
-              <span className="hover:text-white">{loading ? "Sending..." : "Notify Me"}</span>
+        <div className="m-1 h-full">
+          <button className="text-center h-full" type="submit" disabled={loading}>
+            <div className="btn-outline-primary inline-block relative overflow-hidden text-primary-black font-semibold md:p-4 xs:p-3  text-center transition-all duration-300 ease-in-out xs:min-w-[120px] md:min-w-[200px] bg-white border-black hover:bg-primary-black rounded-md">
+              <span className="hover:text-white md:text-xl text-3xl xs:text-base">{loading ? "Sending..." : "Notify Me"}</span>
             </div>
           </button>
         </div>

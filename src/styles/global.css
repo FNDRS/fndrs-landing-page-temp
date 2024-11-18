@@ -9,11 +9,18 @@
   font-style: normal;
 }
 
-html,
-body {
+body,
+html {
   height: 100%;
+  width: 100%;
+  overflow: auto;
+
   margin: 0;
-  overflow: hidden;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 body {
